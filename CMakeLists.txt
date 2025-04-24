@@ -1,12 +1,11 @@
 cmake_minimum_required(VERSION 3.15)
 project(cppcoro LANGUAGES CXX)
 
-add_library(cppcoro STATIC)
+add_library(cppcoro)
 
 file(GLOB CPPORO_SOURCES
-     RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}/lib
-     CONFIGURE_DEPENDS
-     "lib/*.cpp"
+     ${CMAKE_CURRENT_SOURCE_DIR}/lib
+     "lib/*.cpp" "lib/*.hpp"
     )
 target_sources(cppcoro PRIVATE ${CPPORO_SOURCES})
 
